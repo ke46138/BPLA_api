@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package maxbridge;
+
+import "google/protobuf/empty.proto";
+
+service MaxBridge {
+    rpc Subscribe (google.protobuf.Empty) returns (stream Message);
+}
+
+message Message {
+    string id = 1;
+    string text = 2;
+}

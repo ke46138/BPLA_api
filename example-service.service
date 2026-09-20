@@ -1,0 +1,15 @@
+[Unit]
+Description=Example service
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+ExecStart=python /home/user/BPLA_api/main.py
+Restart=on-failure
+User=user
+WorkingDirectory=/home/user/BPLA_api
+Type=notify
+TimeoutSec=120
+
+[Install]
+WantedBy=default.target
